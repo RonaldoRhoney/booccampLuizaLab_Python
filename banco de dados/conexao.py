@@ -9,7 +9,7 @@ cursor = conexao.cursor()
 
 cursor.execute("""
 CREATE TABLE clientes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTER PRIMARY KEY AUTOINCREMENT,
     nome TEXT,
     email TEXT
 )
@@ -17,3 +17,7 @@ CREATE TABLE clientes (
 
 conexao.commit()
 conexao.close()
+
+
+data = ("Rhoney", "ronaldorhoney@hotmail.com")
+cursor.execute("INSERT INTO clientes (nome, email) VALUES (?, ?)", data)
